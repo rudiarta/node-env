@@ -1,14 +1,11 @@
-const http = require('http');
+const express = require('express');
 
-const hostname = '4.1.1.2';
-const port = 3000;
+const app = express();
 
-const server = http.createServer((req,res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-type', 'text/plain');
-    res.end('Hello');
+//Routes
+app.get('/', (req,res) => {
+    res.send('Hello World');
 });
 
-server.listen(port, hostname, () => {
-    console.log('server started on port:'+port);
-});
+//App start listen on port 3000
+app.listen('3000');
