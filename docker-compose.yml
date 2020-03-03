@@ -1,0 +1,22 @@
+version: '2'
+services:
+    node-service:
+        build:
+            context: ./config
+            dockerfile: node-extension
+        container_name: node-service
+        ports: 
+            - '3000:3000'
+        networks:
+            js_nett:
+                ipv4_address: 4.1.1.2
+        volumes:
+            - '.:/app/:rw'
+        mem_limit: 300m
+            
+networks:
+    js_nett:
+        ipam:
+            driver: default
+            config: 
+                - subnet: 4.1.1.0/24
