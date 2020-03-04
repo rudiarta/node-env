@@ -3,6 +3,10 @@
     * Node v13.8.0
 ##
 
+#### Project architecture
+   ![Image Art](https://softwareontheroad.com/static/122dab3154cb7e417bbb210bbce7ca01/8299d/server_layers.jpg)
+##
+
 #### How to use
 ```bash
     $ docker-compose up --build
