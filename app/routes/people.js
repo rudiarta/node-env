@@ -1,5 +1,6 @@
 const express = require('express');
 const middleware = require('../middleware/AuthMiddleware');
+const service = require('../../services/movePeople');
 const router = express.Router();
 
 //Middleware intilize
@@ -14,7 +15,8 @@ router.get('/', (req,res) => {
 });
 
 router.get('/man', (req,res) => {
-    res.send('Hello people man');
+    name = service.showname('rudi');
+    res.send('Hello people man ');
 });
 
 router.get('/women', (req,res) => {

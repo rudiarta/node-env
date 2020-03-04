@@ -1,0 +1,1 @@
+exports.showname = (name) => console.log(name);
