@@ -1,0 +1,1 @@
+exports.auth = (test) => console.log(test);

@@ -5,6 +5,7 @@
 
 #### Project architecture
    ![Image Art](https://softwareontheroad.com/static/122dab3154cb7e417bbb210bbce7ca01/8299d/server_layers.jpg)
+   Don’t put your business logic inside the controllers!!
 ##
 
 #### How to use

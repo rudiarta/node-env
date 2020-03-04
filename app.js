@@ -1,11 +1,9 @@
 const express = require('express');
-
+const people = require('./app/routes/people');
 const app = express();
 
-//Routes
-app.get('/', (req,res) => {
-    res.send('Hello World');
-});
+//Routes initialize
+app.use('/', people);
 
 //App start listen on port 3000
 app.listen('3000');
