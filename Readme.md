@@ -20,3 +20,9 @@
     $ npm install
 ```
 ##
+
+#### List Command
+```bash
+    $ npm run test
+```
+##
