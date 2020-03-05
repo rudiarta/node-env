@@ -2,7 +2,7 @@ const service = require('../services/movePeople');
 
 exports.home = (req,res) => {
     name = service.showname('Test Service');
-    res.send('Hello people');
+    res.json({ message: "Hello people" });
 }
 
 exports.man = (req,res) => {
