@@ -20,7 +20,7 @@ exports.man = (req,res) => {
     let avatar = req.files.asd;
             
     //Use the mv() method to place the file in upload directory (i.e. "uploads")
-    avatar.mv('./uploads/' + avatar.name);
+    avatar.mv('./storage/image' + avatar.name);
 
     console.log(req.params);
     service.showname('Test Service');
