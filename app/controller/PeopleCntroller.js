@@ -1,8 +1,10 @@
 const service = require('../services/movePeople');
+const provinceRepository = require('../repository/provinceRepository');
 
-exports.home = (req,res) => {
+exports.home = async (req,res) => {
     name = service.showname('Test Service');
-    res.json({ message: "Hello people" });
+    
+    res.send(await provinceRepository.test());
 }
 
 exports.man = (req,res) => {
