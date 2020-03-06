@@ -1,25 +1,23 @@
 const express = require('express');
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const routesV1 = require('./app/routes/routesV1');
-const multer = require('multer');
-const upload = multer();
+const fileUpload = require('express-fileupload');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const _ = require('lodash');
 const app = express();
+const routesV1 = require('./app/routes/routesV1');
 require('dotenv').config();
 
-//CORS
-var corsOptions = {
-    origin: process.env.ORIGIN
-  };
-app.use(cors(corsOptions));
-  
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-// parse requests of content-type - application/json
+// enable files upload
+app.use(fileUpload({
+  createParentPath: true
+}));
+
+//add other middleware
+app.use(cors());
 app.use(bodyParser.json());
-// for parsing multipart/form-data
-app.use(upload.array()); 
-app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(morgan('dev'));
 
 //Routes initialize
 app.use('/v1', routesV1);
