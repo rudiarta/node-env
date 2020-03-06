@@ -11,7 +11,7 @@ router.use((req,res,next) => {
 
 //Routes
 router.get('/', (req,res) => peopleController.home(req,res));
-router.get('/man', (req,res) => peopleController.man(req,res));
+router.post('/man', (req,res) => peopleController.man(req,res));
 router.get('/women', (req,res) => peopleController.women(req,res));
 
 module.exports = router;

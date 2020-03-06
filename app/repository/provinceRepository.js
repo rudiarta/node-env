@@ -1,14 +1,19 @@
 const Province = require('../models/Province');
 
-// the defined model is the class itself
-// console.log(Province === sequelize.models.Province); // true
+class ProvinceRepository {
+    async getAllItem(){
+        var pro = await Province.findAll({
+        attributes: ['id', 'name']
+        });
+        var result = JSON.stringify(pro, null, 2);
+        return result;
+    }
 
-async function test(){
-    pro = await Province.findAll({
-    attributes: ['id', 'name']
-    });
-    result = JSON.stringify(pro, null, 2);
-    return result;
+    async addItem(name){
+        // Create a new user
+        const jane = await Province.create({ name: name });
+        // console.log("Jane's auto-generated ID:", jane.id);
+    }
 }
 
-module.exports.test = test;
+module.exports = ProvinceRepository;

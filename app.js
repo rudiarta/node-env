@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const routesV1 = require('./app/routes/routesV1');
+var multer = require('multer');
+var upload = multer();
 const app = express();
 require('dotenv').config();
 
@@ -11,10 +13,13 @@ var corsOptions = {
   };
 app.use(cors(corsOptions));
   
-// parse requests of content-type - application/json
-app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
+// for parsing multipart/form-data
+app.use(upload.array()); 
+app.use(express.static('public'));
 
 //Routes initialize
 app.use('/v1', routesV1);
