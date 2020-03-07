@@ -12,4 +12,9 @@ exports.addItem = async (name) => {
     a.addItem(name);
 };
 
+exports.addFile = (file) => {
+    //Use the mv() method to place the file in upload directory (i.e. "uploads")
+    file.mv('./storage/image/' + Math.random() + file.name);
+}
+
 exports.hello = (name) => {return name};

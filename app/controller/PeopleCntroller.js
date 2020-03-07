@@ -15,14 +15,10 @@ exports.home = async (req,res) => {
 exports.man = (req,res) => {
     //https://attacomsian.com/blog/uploading-files-nodejs-express
     console.log(req.files);
-    console.log(req.files.asd);
-
-    let avatar = req.files.asd;
-            
-    //Use the mv() method to place the file in upload directory (i.e. "uploads")
-    avatar.mv('./storage/image' + avatar.name);
-
     console.log(req.params);
+
+    let file = req.files.asd;
+    service.addFile(file);
     service.showname('Test Service');
     res.status(422);
     res.send(req.body);
