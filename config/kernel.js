@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
-const routesV1 = require('../app/routes/routesV1');
 require('dotenv').config();
 
 // enable files upload
@@ -17,8 +16,5 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
-
-//Routes initialize
-app.use('/v1', routesV1);
 
 module.exports = app;

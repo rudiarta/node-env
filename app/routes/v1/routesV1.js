@@ -1,6 +1,6 @@
 const express = require('express');
-const middleware = require('../middleware/AuthMiddleware');
-const peopleController = require('../controller/PeopleCntroller');
+const middleware = require('../../middleware/AuthMiddleware');
+const peopleController = require('../../controller/PeopleCntroller');
 const router = express.Router();
 
 //Global Middleware initialize
