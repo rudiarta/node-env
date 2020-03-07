@@ -1,7 +1,11 @@
 const provinceRepository = require('../repository/provinceRepository');
 const _ = require('lodash');
 
-exports.showname = (name) => console.log(name);
+exports.showname = (name) => {
+    console.log(name)
+    var a = new provinceRepository();
+    a.getRequestAPI();
+};
 
 exports.getAllProvince = async () => {
     var a = new provinceRepository();
