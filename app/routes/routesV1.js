@@ -9,6 +9,12 @@ router.use((req,res,next) => {
     next();
 });
 
+//Specific Route middleware
+router.use('/women', (req,res,next) => {
+    middleware.auth('Middleware women');
+    next();
+});
+
 //Routes
 router.get('/', (req,res) => peopleController.home(req,res));
 router.post('/man/:id', (req,res) => peopleController.man(req,res));

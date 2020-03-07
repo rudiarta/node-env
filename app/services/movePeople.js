@@ -1,4 +1,5 @@
 const provinceRepository = require('../repository/provinceRepository');
+const _ = require('lodash');
 
 exports.showname = (name) => console.log(name);
 
@@ -11,6 +12,13 @@ exports.addItem = async (name) => {
     var a = new provinceRepository();
     a.addItem(name);
 };
+
+exports.getAllProvinceRaw = async () => {
+    var a = new provinceRepository();
+    var b = await a.rawQuery();
+    console.log('sql',b);
+    return b;
+}
 
 exports.addFile = (file) => {
     //Use the mv() method to place the file in upload directory (i.e. "uploads")
