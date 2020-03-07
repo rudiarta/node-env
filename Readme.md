@@ -19,6 +19,7 @@
     $ cp .env.tmp .env
     $ npm install
 ```
+> edit your `.env` value to what ever you want
 ##
 
 #### List Command
